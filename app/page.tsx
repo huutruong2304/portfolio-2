@@ -24,6 +24,7 @@ import {
 } from '@/components/ui/carousel'
 import TestimonialCard from '@/components/custom/testimonial-card'
 import { SERVICES, PROJECTS, TESTIMONIALS } from '@/mock'
+import { Input } from '@/components/ui/input'
 
 export default async function Home() {
   const projectCategories = ['All', 'React', 'Next.js', 'Backend System', 'Dashboard System']
@@ -207,6 +208,20 @@ export default async function Home() {
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
+            </div>
+          </AppSection>
+          {/* contact */}
+          <AppSection id="contact">
+            <div className="w-1/2 mx-auto">
+              <SectionTitle name={"Let's work together"} className="text-center" />
+              <p className="text-center my-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi
+              </p>
+              <div className="flex space-x-3 mt-10">
+                <Input type="email" placeholder="Enter your email" className="h-12" />
+                <Button className="font-bold h-12">Contact me</Button>
+              </div>
             </div>
           </AppSection>
         </main>
