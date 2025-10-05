@@ -14,3 +14,10 @@ export type ProjectItem = {
   title?: string
   topics?: string[]
 }
+
+export interface Testimonial {
+  content: string
+  name: string
+  profession?: string
+  avatar?: string
+}

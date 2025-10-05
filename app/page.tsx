@@ -12,97 +12,25 @@ import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
-
-import { Monitor, Server, Boxes, Database, Workflow, Cloud, Gauge, ShieldCheck } from 'lucide-react'
-import { ProjectItem, Service } from '@/types'
 import ServiceCard from '@/components/custom/service-card'
 import SectionTitle from '@/components/custom/section-title'
 import ProjectCard from '@/components/custom/project-card'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
+import TestimonialCard from '@/components/custom/testimonial-card'
+import { SERVICES, PROJECTS, TESTIMONIALS } from '@/mock'
 
-/** Full list (8 items) */
-export const SERVICES: Service[] = [
-  {
-    key: 'frontend',
-    title: 'Frontend (React/Next.js)',
-    description: 'Build fast, accessible UIs with solid SEO and Core Web Vitals.',
-    icon: Monitor,
-    highlights: ['Next.js App Router', 'shadcn/ui + Tailwind', 'SSR/ISR'],
-  },
-  {
-    key: 'backend',
-    title: 'Backend API (Node/NestJS)',
-    description: 'Design secure REST/GraphQL APIs with authentication and rate limiting.',
-    icon: Server,
-    highlights: ['Modular NestJS', 'JWT/OAuth', 'Caching'],
-  },
-  {
-    key: 'microservices',
-    title: 'Microservices & Messaging',
-    description: 'Decouple services and scale with asynchronous communication.',
-    icon: Boxes,
-    highlights: ['RabbitMQ', 'Event-driven', 'API Gateway'],
-  },
-  {
-    key: 'database',
-    title: 'Database & ORM',
-    description: 'Schema design and query optimization for high throughput.',
-    icon: Database,
-    highlights: ['Postgres/MongoDB', 'Prisma/Mongoose', 'Indexing'],
-  },
-  {
-    key: 'devops',
-    title: 'DevOps & CI/CD',
-    description: 'Reliable deployments with automated pipelines and rollbacks.',
-    icon: Workflow,
-    highlights: ['Docker/PM2', 'GitHub Actions', 'Zero-downtime'],
-  },
-  {
-    key: 'cloud',
-    title: 'Cloud & Infrastructure',
-    description: 'Hardened environments with monitoring, logging, and SSL.',
-    icon: Cloud,
-    highlights: ['Nginx/SSL', 'AWS/Azure/VPS', 'Observability'],
-  },
-  {
-    key: 'performance',
-    title: 'Performance & SEO',
-    description: 'Speed audits and search visibility for business impact.',
-    icon: Gauge,
-    highlights: ['Image/CDN', 'Bundle analysis', 'sitemap/robots'],
-  },
-  {
-    key: 'qa',
-    title: 'Testing & Quality',
-    description: 'Confidence before release with automated testing.',
-    icon: ShieldCheck,
-    highlights: ['Jest/Playwright', 'Type checking', 'E2E'],
-  },
-]
+export default async function Home() {
+  const projectCategories = ['All', 'React', 'Next.js', 'Backend System', 'Dashboard System']
+  const serviceData = SERVICES
+  const projectData = PROJECTS
+  const testimonialData = TESTIMONIALS
 
-export const PROJECTS: ProjectItem[] = [
-  {
-    frontImage: '/images/project/project-sample-1-1.png',
-    backImage: '/images/project/project-sample-1-2.png',
-    title: 'Booking Dashboard',
-    topics: ['React', 'Next.js', 'TypeScript', 'Dashboard System', 'Tailwind'],
-  },
-  {
-    frontImage: '/images/project/project-sample-2-1.png',
-    backImage: '/images/project/project-sample-2-2.png',
-    title: 'E-commerce API',
-    topics: ['Backend System', 'Node.js', 'NestJS', 'PostgreSQL', 'Docker'],
-  },
-  {
-    frontImage: '/images/project/project-sample-3-1.png',
-    backImage: '/images/project/project-sample-3-2.png',
-    title: 'Realtime Chat App',
-    topics: ['Next.js', 'React', 'TypeScript', 'Redis', 'WebSocket'],
-  },
-]
-
-export const PROJECT_CATEGORIES = ['All', 'React', 'Next.js', 'Backend System', 'Dashboard System']
-
-export default function Home() {
   return (
     <div>
       <AppHeader />
@@ -198,7 +126,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-4 gap-5 mt-16">
-              {SERVICES.map((service) => (
+              {serviceData.map((service) => (
                 <ServiceCard
                   key={service.key}
                   name={service.title}
@@ -212,15 +140,15 @@ export default function Home() {
           <AppSection id="projects">
             <div className="w-1/2 mx-auto">
               <SectionTitle name="My Projects" className="text-center" />
-              <p className="text-center">
+              <p className="text-center my-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
                 consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi
                 convallis pretium
               </p>
             </div>
             <div>
-              <div className="my-5 flex justify-center space-x-3">
-                {PROJECT_CATEGORIES.map((category) => (
+              <div className="my-10 flex justify-center space-x-3">
+                {projectCategories.map((category) => (
                   <Button
                     key={category}
                     variant="outline"
@@ -234,8 +162,8 @@ export default function Home() {
                   </Button>
                 ))}
               </div>
-              <div className="grid grid-cols-3 gap-10 mt-10">
-                {PROJECTS.map((project) => (
+              <div className="grid grid-cols-3 gap-10 py-5">
+                {projectData.map((project) => (
                   <ProjectCard
                     key={project.title}
                     frontImage={project.frontImage}
@@ -245,6 +173,40 @@ export default function Home() {
                   />
                 ))}
               </div>
+            </div>
+          </AppSection>
+          {/* testimonials */}
+          <AppSection id="testimonials">
+            <div className="w-1/2 mx-auto">
+              <SectionTitle name="Testimonials" className="text-center" />
+              <p className="text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi
+                convallis pretium
+              </p>
+            </div>
+            <div className="my-10">
+              <Carousel
+                opts={{
+                  align: 'center',
+                }}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {testimonialData.map((testimonial) => (
+                    <CarouselItem className="basis-1/2" key={testimonial.name}>
+                      <TestimonialCard
+                        content={testimonial.content}
+                        name={testimonial.name}
+                        profession={testimonial.profession}
+                        avatar={testimonial.avatar}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </div>
           </AppSection>
         </main>
