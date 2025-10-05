@@ -9,12 +9,12 @@ const AppHeader = () => {
     name: string
     link: string
   }[] = [
-    { id: 'home', name: 'Home', link: '/' },
-    { id: 'about', name: 'About Me', link: '/about' },
-    { id: 'contact', name: 'Contact', link: '/contact' },
-    { id: 'services', name: 'Services', link: '/services' },
-    { id: 'testimonials', name: 'Testimonials', link: '/testimonials' },
-    { id: 'contact', name: 'Contact', link: '/contact' },
+    { id: 'home', name: 'Home', link: '#home' },
+    { id: 'about', name: 'About Me', link: '#about' },
+    { id: 'services', name: 'Services', link: '#services' },
+    { id: 'projects', name: 'Projects', link: '#projects' },
+    { id: 'testimonials', name: 'Testimonials', link: '#testimonials' },
+    { id: 'contact', name: 'Contact', link: '#contact' },
   ]
   return (
     <header className="py-5 flex items-center justify-between app-container sticky top-0 bg-white z-50">
