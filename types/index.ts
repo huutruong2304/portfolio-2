@@ -21,3 +21,9 @@ export interface Testimonial {
   profession?: string
   avatar?: string
 }
+
+export interface HeaderItem {
+  id: string
+  name: string
+  link: string
+}

@@ -2,23 +2,13 @@ import React from 'react'
 import { Button } from '../ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
 import { MenuIcon } from 'lucide-react'
+import { HEADER_ITEMS } from '@/const'
 
 const AppHeader = () => {
-  const headerList: {
-    id: string
-    name: string
-    link: string
-  }[] = [
-    { id: 'home', name: 'Home', link: '#home' },
-    { id: 'about', name: 'About Me', link: '#about' },
-    { id: 'services', name: 'Services', link: '#services' },
-    { id: 'projects', name: 'Projects', link: '#projects' },
-    { id: 'testimonials', name: 'Testimonials', link: '#testimonials' },
-    { id: 'contact', name: 'Contact', link: '#contact' },
-  ]
+  const headerList = HEADER_ITEMS
   return (
     <header className="py-5 flex items-center justify-between app-container sticky top-0 bg-white z-50">
-      <div className="text-primary font-extrabold text-2xl">LOGO</div>
+      <div className="text-primary font-extrabold text-2xl uppercase">Coding with Truong</div>
       <ul className="space-x-10 items-center hidden md:flex">
         {headerList.map((item) => (
           <li

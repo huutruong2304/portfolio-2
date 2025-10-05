@@ -70,16 +70,16 @@ export default async function Home() {
                 </div>
                 <div className="flex space-x-5">
                   <Link href={'#'}>
-                    <FacebookIcon className="w-8 h-8" />
+                    <FacebookIcon className="social-icon" />
                   </Link>
                   <Link href={'#'}>
-                    <GithubIcon className="w-8 h-8" />
+                    <GithubIcon className="social-icon" />
                   </Link>
                   <Link href={'#'}>
-                    <LinkedinIcon className="w-8 h-8" />
+                    <LinkedinIcon className="social-icon" />
                   </Link>
                   <Link href={'#'}>
-                    <YoutubeIcon className="w-8 h-8" />
+                    <YoutubeIcon className="social-icon" />
                   </Link>
                 </div>
               </div>

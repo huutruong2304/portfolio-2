@@ -125,4 +125,8 @@
   .app-container {
     @apply container max-w-[1423px] mx-auto px-4 md:px-0;
   }
+
+  .social-icon {
+    @apply w-8 h-8 hover:text-primary transition duration-300;
+  }
 }
