@@ -23,7 +23,7 @@ const AppHeader = () => {
         {headerList.map((item) => (
           <li
             key={item.id}
-            className="text-primary hover:text-orange-500 font-semibold transition duration-300 text-sm cursor-pointer"
+            className="text-black hover:text-primary font-semibold transition duration-300 text-sm cursor-pointer"
           >
             <a href={item.link}>{item.name}</a>
           </li>
@@ -49,7 +49,7 @@ const AppHeader = () => {
               {headerList.map((item) => (
                 <li
                   key={item.id}
-                  className="text-primary hover:text-orange-500 font-semibold transition duration-300 text-sm cursor-pointer"
+                  className="text-black hover:text-primary font-semibold transition duration-300 text-sm cursor-pointer"
                 >
                   <a href={item.link}>{item.name}</a>
                 </li>
