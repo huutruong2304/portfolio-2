@@ -7,3 +7,10 @@ export type Service = {
   highlights?: string[]
   href?: string
 }
+
+export type ProjectItem = {
+  frontImage?: string
+  backImage?: string
+  title?: string
+  topics?: string[]
+}

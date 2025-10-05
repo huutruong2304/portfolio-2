@@ -14,8 +14,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Monitor, Server, Boxes, Database, Workflow, Cloud, Gauge, ShieldCheck } from 'lucide-react'
-import { Service } from '@/types'
+import { ProjectItem, Service } from '@/types'
 import ServiceCard from '@/components/custom/service-card'
+import SectionTitle from '@/components/custom/section-title'
+import ProjectCard from '@/components/custom/project-card'
 
 /** Full list (8 items) */
 export const SERVICES: Service[] = [
@@ -76,6 +78,29 @@ export const SERVICES: Service[] = [
     highlights: ['Jest/Playwright', 'Type checking', 'E2E'],
   },
 ]
+
+export const PROJECTS: ProjectItem[] = [
+  {
+    frontImage: '/images/project/project-sample-1-1.png',
+    backImage: '/images/project/project-sample-1-2.png',
+    title: 'Booking Dashboard',
+    topics: ['React', 'Next.js', 'TypeScript', 'Dashboard System', 'Tailwind'],
+  },
+  {
+    frontImage: '/images/project/project-sample-2-1.png',
+    backImage: '/images/project/project-sample-2-2.png',
+    title: 'E-commerce API',
+    topics: ['Backend System', 'Node.js', 'NestJS', 'PostgreSQL', 'Docker'],
+  },
+  {
+    frontImage: '/images/project/project-sample-3-1.png',
+    backImage: '/images/project/project-sample-3-2.png',
+    title: 'Realtime Chat App',
+    topics: ['Next.js', 'React', 'TypeScript', 'Redis', 'WebSocket'],
+  },
+]
+
+export const PROJECT_CATEGORIES = ['All', 'React', 'Next.js', 'Backend System', 'Dashboard System']
 
 export default function Home() {
   return (
@@ -146,7 +171,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h2 className="text-5xl font-extrabold mb-10">About Me</h2>
+              <SectionTitle name="About Me" />
               <p className="my-5">
                 I am a full-stack developer with a passion for creating innovative and user-friendly
                 web applications. With a strong foundation in both front-end and back-end
@@ -165,7 +190,7 @@ export default function Home() {
           {/* services */}
           <AppSection id="services">
             <div className="w-1/2 mx-auto">
-              <h2 className="text-5xl font-extrabold mb-5 text-center">Services</h2>
+              <SectionTitle name="Services" className="text-center" />
               <p className="text-center">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
                 consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi
@@ -181,6 +206,45 @@ export default function Home() {
                   icon={service.icon}
                 />
               ))}
+            </div>
+          </AppSection>
+          {/* projects */}
+          <AppSection id="projects">
+            <div className="w-1/2 mx-auto">
+              <SectionTitle name="My Projects" className="text-center" />
+              <p className="text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi
+                convallis pretium
+              </p>
+            </div>
+            <div>
+              <div className="my-5 flex justify-center space-x-3">
+                {PROJECT_CATEGORIES.map((category) => (
+                  <Button
+                    key={category}
+                    variant="outline"
+                    className={
+                      category === 'All'
+                        ? 'bg-orange-500 text-white hover:bg-orange-600 hover:text-white cursor-pointer'
+                        : 'cursor-pointer'
+                    }
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
+              <div className="grid grid-cols-3 gap-10 mt-10">
+                {PROJECTS.map((project) => (
+                  <ProjectCard
+                    key={project.title}
+                    frontImage={project.frontImage}
+                    backImage={project.backImage}
+                    title={project.title}
+                    topics={project.topics}
+                  />
+                ))}
+              </div>
             </div>
           </AppSection>
         </main>
