@@ -6,12 +6,76 @@ import YoutubeIcon from '@/components/icons/youtube-icon'
 import AppContainer from '@/components/layout/app-container'
 import AppFooter from '@/components/layout/app-footer'
 import AppHeader from '@/components/layout/app-header'
+import AppSection from '@/components/layout/app-section'
 import TwoColSection from '@/components/layout/two-col-section'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Button } from '@/components/ui/button'
-import { Progress } from '@/components/ui/progress'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { Monitor, Server, Boxes, Database, Workflow, Cloud, Gauge, ShieldCheck } from 'lucide-react'
+import { Service } from '@/types'
+import ServiceCard from '@/components/custom/service-card'
+
+/** Full list (8 items) */
+export const SERVICES: Service[] = [
+  {
+    key: 'frontend',
+    title: 'Frontend (React/Next.js)',
+    description: 'Build fast, accessible UIs with solid SEO and Core Web Vitals.',
+    icon: Monitor,
+    highlights: ['Next.js App Router', 'shadcn/ui + Tailwind', 'SSR/ISR'],
+  },
+  {
+    key: 'backend',
+    title: 'Backend API (Node/NestJS)',
+    description: 'Design secure REST/GraphQL APIs with authentication and rate limiting.',
+    icon: Server,
+    highlights: ['Modular NestJS', 'JWT/OAuth', 'Caching'],
+  },
+  {
+    key: 'microservices',
+    title: 'Microservices & Messaging',
+    description: 'Decouple services and scale with asynchronous communication.',
+    icon: Boxes,
+    highlights: ['RabbitMQ', 'Event-driven', 'API Gateway'],
+  },
+  {
+    key: 'database',
+    title: 'Database & ORM',
+    description: 'Schema design and query optimization for high throughput.',
+    icon: Database,
+    highlights: ['Postgres/MongoDB', 'Prisma/Mongoose', 'Indexing'],
+  },
+  {
+    key: 'devops',
+    title: 'DevOps & CI/CD',
+    description: 'Reliable deployments with automated pipelines and rollbacks.',
+    icon: Workflow,
+    highlights: ['Docker/PM2', 'GitHub Actions', 'Zero-downtime'],
+  },
+  {
+    key: 'cloud',
+    title: 'Cloud & Infrastructure',
+    description: 'Hardened environments with monitoring, logging, and SSL.',
+    icon: Cloud,
+    highlights: ['Nginx/SSL', 'AWS/Azure/VPS', 'Observability'],
+  },
+  {
+    key: 'performance',
+    title: 'Performance & SEO',
+    description: 'Speed audits and search visibility for business impact.',
+    icon: Gauge,
+    highlights: ['Image/CDN', 'Bundle analysis', 'sitemap/robots'],
+  },
+  {
+    key: 'qa',
+    title: 'Testing & Quality',
+    description: 'Confidence before release with automated testing.',
+    icon: ShieldCheck,
+    highlights: ['Jest/Playwright', 'Type checking', 'E2E'],
+  },
+]
 
 export default function Home() {
   return (
@@ -74,7 +138,7 @@ export default function Home() {
                 <AspectRatio ratio={1 / 1} className="w-full rounded-full overflow-hidden">
                   <Image
                     className="object-cover"
-                    src={'/avatar.png'}
+                    src={'/avatar-2.png'}
                     fill
                     alt="truong-nguyen-avatar"
                   />
@@ -98,6 +162,27 @@ export default function Home() {
               </div>
             </div>
           </TwoColSection>
+          {/* services */}
+          <AppSection id="services">
+            <div className="w-1/2 mx-auto">
+              <h2 className="text-5xl font-extrabold mb-5 text-center">Services</h2>
+              <p className="text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi
+                convallis pretium
+              </p>
+            </div>
+            <div className="grid grid-cols-4 gap-5 mt-16">
+              {SERVICES.map((service) => (
+                <ServiceCard
+                  key={service.key}
+                  name={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                />
+              ))}
+            </div>
+          </AppSection>
         </main>
       </AppContainer>
       <AppFooter />
