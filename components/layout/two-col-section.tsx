@@ -6,7 +6,7 @@ type Props = React.HTMLAttributes<HTMLElement> & {
 
 const TwoColSection = ({ children, ...props }: Props) => {
   return (
-    <section className="my-20 grid-cols-2 gap-10 md:grid" {...props}>
+    <section className="py-20 grid-cols-2 gap-10 md:grid min-h-[90vh] flex items-center" {...props}>
       {children}
     </section>
   )

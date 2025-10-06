@@ -6,7 +6,7 @@ type Props = React.HTMLAttributes<HTMLElement> & {
 
 const AppSection = ({ children, ...props }: Props) => {
   return (
-    <section className="w-full my-20" {...props}>
+    <section className="w-full py-20" {...props}>
       {children}
     </section>
   )

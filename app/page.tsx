@@ -62,7 +62,7 @@ export default async function Home() {
                   <AspectRatio ratio={1 / 1} className="w-full rounded-full overflow-hidden">
                     <Image
                       className="object-cover"
-                      src={'/avatar.png'}
+                      src={'/images/user/avatar.png'}
                       fill
                       alt="truong-nguyen-avatar"
                     />
@@ -92,7 +92,7 @@ export default async function Home() {
                 <AspectRatio ratio={1 / 1} className="w-full rounded-full overflow-hidden">
                   <Image
                     className="object-cover"
-                    src={'/avatar-2.png'}
+                    src={'/images/user/avatar-2.png'}
                     fill
                     alt="truong-nguyen-avatar"
                   />
@@ -212,7 +212,7 @@ export default async function Home() {
           </AppSection>
           {/* contact */}
           <AppSection id="contact">
-            <div className="w-1/2 mx-auto">
+            <div className="w-1/2 mx-auto py-10">
               <SectionTitle name={"Let's work together"} className="text-center" />
               <p className="text-center my-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
