@@ -8,9 +8,7 @@ import AppFooter from '@/components/layout/app-footer'
 import AppHeader from '@/components/layout/app-header'
 import AppSection from '@/components/layout/app-section'
 import TwoColSection from '@/components/layout/two-col-section'
-import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Button } from '@/components/ui/button'
-import Image from 'next/image'
 import Link from 'next/link'
 import ServiceCard from '@/components/custom/service-card'
 import SectionTitle from '@/components/custom/section-title'
@@ -25,6 +23,7 @@ import {
 import TestimonialCard from '@/components/custom/testimonial-card'
 import { SERVICES, PROJECTS, TESTIMONIALS } from '@/mock'
 import { Input } from '@/components/ui/input'
+import AvatarProfile from '@/components/custom/avatar-profile'
 
 export default async function Home() {
   const projectCategories = ['All', 'React', 'Next.js', 'Backend System', 'Dashboard System']
@@ -58,16 +57,7 @@ export default async function Home() {
             </div>
             <div className="flex justify-end">
               <div className="flex flex-col items-center space-y-5">
-                <div className="w-96 h-96 bg-transparent rounded-full border-2 border-orange-500 shadow-2xl">
-                  <AspectRatio ratio={1 / 1} className="w-full rounded-full overflow-hidden">
-                    <Image
-                      className="object-cover"
-                      src={'/images/user/avatar.png'}
-                      fill
-                      alt="truong-nguyen-avatar"
-                    />
-                  </AspectRatio>
-                </div>
+                <AvatarProfile src="/images/user/avatar-2.png" alt="truong-nguyen-avatar" />
                 <div className="flex space-x-5">
                   <Link href={'#'}>
                     <FacebookIcon className="social-icon" />
@@ -88,16 +78,7 @@ export default async function Home() {
           {/* about me */}
           <TwoColSection id="about">
             <div className="flex justify-start items-center">
-              <div className="w-96 h-96 bg-transparent rounded-full border-2 border-orange-500 shadow-2xl">
-                <AspectRatio ratio={1 / 1} className="w-full rounded-full overflow-hidden">
-                  <Image
-                    className="object-cover"
-                    src={'/images/user/avatar-2.png'}
-                    fill
-                    alt="truong-nguyen-avatar"
-                  />
-                </AspectRatio>
-              </div>
+              <AvatarProfile src="/images/user/avatar.png" alt="truong-nguyen-avatar" />
             </div>
             <div>
               <SectionTitle name="About Me" />
