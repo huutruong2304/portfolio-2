@@ -123,7 +123,7 @@
 
 @layer utilities {
   .app-container {
-    @apply container max-w-[1423px] mx-auto px-4 md:px-0;
+    @apply container max-w-[1400px] mx-auto px-4 md:px-4 lg:px-8;
   }
 
   .social-icon {

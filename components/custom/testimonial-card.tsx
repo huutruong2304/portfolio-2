@@ -11,9 +11,9 @@ type Props = {
 
 const TestimonialCard = ({ content, name, profession, avatar }: Props) => {
   return (
-    <div className="w-full h-72 bg-gray-100 rounded-lg overflow-hidden grid grid-cols-7 items-center px-4">
+    <div className="w-full py-10  bg-gray-100 rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-7 items-center px-4">
       <div className="col-span-2">
-        <Avatar className="w-40 h-40 ">
+        <Avatar className="w-16 h-16 md:w-20 md:h-20 lg:w-30 lg:h-30">
           <AvatarImage src={avatar} className="object-cover" alt={name + ' avatar'} />
           <AvatarFallback className="bg-primary/10">
             <UserIcon className="w-10 h-10 text-primary" />

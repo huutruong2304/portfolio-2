@@ -11,10 +11,10 @@ const AppFooter = () => {
   return (
     <>
       <div className="bg-gray-100 flex flex-col justify-center items-center py-15">
-        <div className="text-gray-400 font-extrabold text-4xl uppercase mt-5">
+        <div className="text-xl text-gray-400 font-extrabold md:text-4xl uppercase mt-5">
           coding with truong
         </div>
-        <ul className="space-x-10 items-center hidden md:flex mt-15">
+        <ul className="w-3/4 md:w-full items-center flex flex-wrap justify-center mt-5 md:mt-15 space-x-4 space-y-2 md:space-x-10">
           {headerList.map((item) => (
             <li
               key={item.id}
@@ -25,7 +25,7 @@ const AppFooter = () => {
           ))}
         </ul>
 
-        <div className="flex space-x-5 mt-15">
+        <div className="flex space-x-5 mt-5 md:mt-15">
           <Link href={'#'}>
             <FacebookIcon className="social-icon" />
           </Link>

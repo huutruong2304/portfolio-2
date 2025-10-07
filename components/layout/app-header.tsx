@@ -8,8 +8,8 @@ const AppHeader = () => {
   const headerList = HEADER_ITEMS
   return (
     <header className="py-5 flex items-center justify-between app-container sticky top-0 bg-white z-50">
-      <div className="text-primary font-extrabold text-2xl uppercase">Coding with Truong</div>
-      <ul className="space-x-10 items-center hidden md:flex">
+      <div className="text-primary font-extrabold text-2xl uppercase">LOGO</div>
+      <ul className="space-x-5 lg:space-x-10 items-center hidden md:flex">
         {headerList.map((item) => (
           <li
             key={item.id}
