@@ -31,11 +31,11 @@ const TestimonialSection = () => {
           opts={{
             align: 'center',
           }}
-          className="w-full"
+          className="w-full md:w-[95%] mx-auto"
         >
           <CarouselContent>
             {testimonialData.map((testimonial) => (
-              <CarouselItem className="w-full md:basis-1/2" key={testimonial.name}>
+              <CarouselItem className="basis-3/4 md:basis-1/2" key={testimonial.name}>
                 <TestimonialCard
                   content={testimonial.content}
                   name={testimonial.name}
