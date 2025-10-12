@@ -7,6 +7,8 @@ import ServiceSection from './_components/service-section'
 import ProjectSection from './_components/project-section'
 import TestimonialSection from './_components/testimonial-section'
 import ContactSection from './_components/contact-section'
+import { FadeIn } from '@/components/motion/fade-in'
+import { SlideUp } from '@/components/motion/slide-up'
 
 export default async function Home() {
   return (
@@ -15,17 +17,29 @@ export default async function Home() {
       <AppContainer>
         <main className="flex min-h-screen flex-col items-center justify-between">
           {/* introduce */}
-          <IntroductionSection />
+          <FadeIn>
+            <IntroductionSection />
+          </FadeIn>
           {/* about me */}
-          <AboutSection />
+          <SlideUp>
+            <AboutSection />
+          </SlideUp>
           {/* services */}
-          <ServiceSection />
+          <SlideUp>
+            <ServiceSection />
+          </SlideUp>
           {/* projects */}
-          <ProjectSection />
+          <SlideUp>
+            <ProjectSection />
+          </SlideUp>
           {/* testimonials */}
-          <TestimonialSection />
+          <SlideUp>
+            <TestimonialSection />
+          </SlideUp>
           {/* contact */}
-          <ContactSection />
+          <SlideUp>
+            <ContactSection />
+          </SlideUp>
         </main>
       </AppContainer>
       <AppFooter />
