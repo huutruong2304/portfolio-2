@@ -96,8 +96,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 If you find this project helpful and would like to support me, consider buying me a coffee. Every contribution is greatly appreciated!
 
-<a href="https://www.buymeacoffee.com/truongnh9x">
-  <img alt="Buy Me a Coffee" src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=truongnh9x&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff">
+<a href="https://www.buymeacoffee.com/truongnh9x" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
 </a>
 
 ## 📬 Contact
