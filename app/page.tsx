@@ -12,7 +12,7 @@ import { SlideUp } from '@/components/motion/slide-up'
 
 export default async function Home() {
   return (
-    <div>
+    <>
       <AppHeader />
       <AppContainer>
         <main className="flex min-h-screen flex-col items-center justify-between">
@@ -43,6 +43,6 @@ export default async function Home() {
         </main>
       </AppContainer>
       <AppFooter />
-    </div>
+    </>
   )
 }

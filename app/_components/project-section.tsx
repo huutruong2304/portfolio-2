@@ -32,7 +32,7 @@ const ProjectSection = () => {
               variant="outline"
               className={
                 category === selectedCategory
-                  ? 'bg-orange-500 text-white hover:bg-orange-600 hover:text-white cursor-pointer'
+                  ? 'text-background !bg-primary hover:text-background hover:bg-orange-600 cursor-pointer'
                   : 'cursor-pointer'
               }
               onClick={() => setSelectedCategory(category)}

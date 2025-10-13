@@ -10,7 +10,7 @@ const AppFooter = () => {
   const headerList = HEADER_ITEMS
   return (
     <>
-      <div className="bg-gray-100 flex flex-col justify-center items-center py-15">
+      <div className="bg-card flex flex-col justify-center items-center py-15">
         <div className="text-xl text-gray-400 font-extrabold md:text-4xl uppercase mt-5">
           coding with truong
         </div>
@@ -18,7 +18,7 @@ const AppFooter = () => {
           {headerList.map((item) => (
             <li
               key={item.id}
-              className="text-black hover:text-primary font-semibold transition duration-300 text-sm cursor-pointer"
+              className="text-foreground hover:text-primary font-semibold transition duration-300 text-sm cursor-pointer"
             >
               <a href={item.link}>{item.name}</a>
             </li>
