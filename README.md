@@ -16,6 +16,7 @@ An open-source Next.js portfolio template with a minimalist and modern aesthetic
 - 🚀 **High Performance:** Optimized images and Server-Side Rendering (SSR) for fast page loads.
 - 🎨 **Customizable Theming:** Easily change colors and fonts using Tailwind CSS.
 - 📱 **Fully Responsive:** Works seamlessly on all devices, from mobile to desktop.
+- 🌙 **Dark Mode Support:** Switch between light and dark themes for better user experience.
 
 ## 🙏 Acknowledgements
 
